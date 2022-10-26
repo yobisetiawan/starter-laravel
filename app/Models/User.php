@@ -12,6 +12,14 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const EMAIL_IMPLEMENTER = 'implementer@62teknologi.com';
+
+    const EMAIL_SUPERADMIN = 'superadmin@msglowclinic.id';
+
+    const PASSWORD_DEFAULT = 'Pass1234';
+
+    const TIMEZONE_DEFAULT = "Asia/Jakarta";
+
     /**
      * The attributes that are mass assignable.
      *

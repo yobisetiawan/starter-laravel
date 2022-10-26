@@ -1,0 +1,526 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "LARAVEL API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api/v1",
+            "description": "API LARAVEL V1"
+        }
+    ],
+    "paths": {
+        "/auth/forgot-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return token",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "password": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return token",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "phone": {},
+                                    "name": {},
+                                    "password": {},
+                                    "password_confirmation": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return token",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "code": {},
+                                    "password": {},
+                                    "password_confirmation": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/verify-email": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "code": {},
+                                    "action": {
+                                        "enum": [
+                                            "resend",
+                                            "verify"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/verify-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {},
+                                    "code": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/change-avatar": {
+            "post": {
+                "tags": [
+                    "User - Profile"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "avatar": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return User model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/change-password": {
+            "post": {
+                "tags": [
+                    "User - Profile"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "old_password": {},
+                                    "password": {},
+                                    "password_confirmation": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return User model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/change-profile": {
+            "post": {
+                "tags": [
+                    "User - Profile"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "name": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return User model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user": {
+            "get": {
+                "tags": [
+                    "User - Profile"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return User model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "User - Profile"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Success True",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "parameters": {
+            "OA_id": {
+                "name": "id",
+                "in": "path",
+                "description": "Uuid model",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "OA_listQ": {
+                "name": "q",
+                "in": "query",
+                "description": "Keyword for search data",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "OA_method_put": {
+                "name": "_method",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "PUT"
+                    ],
+                    "default": "PUT"
+                }
+            },
+            "OA_listType": {
+                "name": "type",
+                "in": "query",
+                "description": "Type of list",
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "collection",
+                        "pagination"
+                    ],
+                    "default": "pagination"
+                }
+            },
+            "OA_listPage": {
+                "name": "page",
+                "in": "query",
+                "description": "Number of page usefull if type is pagination",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "OA_SortBy": {
+                "name": "sort_by",
+                "in": "query",
+                "description": "Sort by",
+                "schema": {
+                    "type": "string",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ]
+                }
+            },
+            "OA_OrderBy": {
+                "name": "order_by",
+                "in": "query",
+                "description": "Order by",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "OA_limit": {
+                "name": "limit",
+                "in": "query",
+                "description": "Limit data",
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "OA_Relations": {
+                "name": "relations",
+                "in": "query",
+                "description": "Get relations of the model",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "OA_is_active": {
+                "name": "is_active",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        "1",
+                        "0"
+                    ]
+                }
+            },
+            "OA_is_enabled": {
+                "name": "is_enabled",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "enum": [
+                        "1",
+                        "0"
+                    ]
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth"
+        }
+    ]
+}
