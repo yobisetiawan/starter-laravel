@@ -34,12 +34,15 @@ class ChangeAvatarController extends BaseCrud
         if ($file = $this->requestData->file('avatar')) {
             $upload = new UploadService(
                 $file,
-                FileUploadConst::USER_AVATAR_PATH,
+                User::UPLOAD_PATH_AVATAR,
                 Auth::user()->uuid
             );
 
             $upload->uploadResize(300);
-            $upload->saveFileInfo($this->row->avatar(), ['slug' =>  File::SLUG_FILE_PROFILE, 'ref_table' => $this->row->getTable() ]);
+            $upload->saveFileInfo(
+                $this->row->avatar(),
+                ['slug' =>  File::SLUG_FILE_PROFILE, 'ref_table' => $this->row->getTable()]
+            );
         }
     }
 }

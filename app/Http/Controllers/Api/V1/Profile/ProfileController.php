@@ -35,11 +35,10 @@ class ProfileController extends BaseCrud
             'is_active' => false
         ]);
 
-        if(!empty($this->row->patient->defaultIdentity)){
+        if (!empty($this->row->patient->defaultIdentity)) {
             $this->row->patient->defaultIdentity->update([
                 'is_active' => false
             ]);
         }
-
     }
 }
