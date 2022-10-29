@@ -26,7 +26,7 @@ class ChangeAvatarController extends BaseCrud
     {
         $user = Auth::user();
 
-        return $this->update($request, $user->uuid);
+        return $this->update($request, $user->id);
     }
 
     public function __afterUpdate()
@@ -35,7 +35,7 @@ class ChangeAvatarController extends BaseCrud
             $upload = new UploadService(
                 $file,
                 User::UPLOAD_PATH_AVATAR,
-                Auth::user()->uuid
+                Auth::user()->id
             );
 
             $upload->uploadResize(300);

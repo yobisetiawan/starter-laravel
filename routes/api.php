@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
+use App\Http\Controllers\Api\V1\Profile\ChangeAvatarController;
+use App\Http\Controllers\Api\V1\Profile\ChangePasswordController;
+use App\Http\Controllers\Api\V1\Profile\ChangeProfileController;
 use App\Http\Controllers\Api\V1\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;

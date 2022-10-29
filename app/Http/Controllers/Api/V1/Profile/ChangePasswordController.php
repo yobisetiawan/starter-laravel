@@ -23,7 +23,7 @@ class ChangePasswordController extends BaseCrud
     {
         $user = Auth::user();
 
-        return $this->update($request, $user->uuid);
+        return $this->update($request, $user->id);
     }
 
     public function __prepareDataUpdate($data)

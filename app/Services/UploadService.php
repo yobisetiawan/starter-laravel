@@ -34,7 +34,7 @@ class UploadService
             $this->fileInfo = $this->setFileOriginalInfo();
         }
 
-        $this->disk = $disk ?? env('DEFAULT_DISK', $this->disk);
+        $this->disk = $disk ?? env('FILESYSTEM_DISK', $this->disk);
 
         $this->option = $option ?? $this->option;
     }
