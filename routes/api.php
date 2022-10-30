@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
+use App\Http\Controllers\Api\V1\Example\SampleController;
 use App\Http\Controllers\Api\V1\Profile\ChangeAvatarController;
 use App\Http\Controllers\Api\V1\Profile\ChangePasswordController;
 use App\Http\Controllers\Api\V1\Profile\ChangeProfileController;
@@ -45,6 +46,10 @@ Route::prefix('v1')->middleware(['guard_api'])->group(function () {
             Route::post('change-profile', [ChangeProfileController::class, 'store']);
             Route::post('change-password', [ChangePasswordController::class, 'store']);
             Route::post('change-avatar', [ChangeAvatarController::class, 'store']);
+        });
+
+        Route::prefix('example')->group(function () {
+            Route::apiResource('samples', SampleController::class);
         });
     });
 });

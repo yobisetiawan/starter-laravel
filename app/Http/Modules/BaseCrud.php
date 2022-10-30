@@ -22,7 +22,7 @@ class BaseCrud extends Controller
 
     public $searchAble = [];
 
-    public $modelKey = 'id';
+    public $modelKey = 'uuid';
 
     public $storeValidator;
 

@@ -1,5 +1,6 @@
 php artisan migrate --force
 php artisan migrate --path=database/migrations/base/ --force
+php artisan migrate --path=database/migrations/example/ --force
 # php artisan migrate --path=database/migrations/account/ --force
 # php artisan migrate --path=database/migrations/employee/ --force
 # php artisan migrate --path=database/migrations/finance/ --force

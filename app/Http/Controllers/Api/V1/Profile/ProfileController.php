@@ -13,17 +13,16 @@ class ProfileController extends BaseCrud
     public $model = User::class;
     public $resource = UserResource::class;
 
-
     public function index(Request $req)
     {
         $user = Auth::user();
-        return $this->show($user->id);
+        return $this->show($user->uuid);
     }
 
     public function deleteUser()
     {
         $user = Auth::user();
-        return $this->destroy($user->id);
+        return $this->destroy($user->uuid);
     }
 
     public function __beforeDestroy()

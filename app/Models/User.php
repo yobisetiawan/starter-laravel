@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Base\File;
+use App\Traits\HasBaseOwner;
+use App\Traits\HasBaseTable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,7 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasBaseOwner, HasBaseTable;
 
     const UPLOAD_PATH_AVATAR ="users/avatars";
     const EMAIL_IMPLEMENTER = 'implementer@62teknologi.com';

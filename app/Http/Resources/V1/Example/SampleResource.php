@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\V1\Profile;
+namespace App\Http\Resources\V1\Example;
 
 use App\Http\Resources\V1\Base\FileInfoResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class SampleResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,15 +18,10 @@ class UserResource extends JsonResource
 
         return [
             'id' => $this->uuid,
-            'name' => $this->name,
-            'email' => $this->email,
-            'phone' => $this->phone,
-            'email_verified_at' => $this->email_verified_at,
+            'title' => $this->title,
+            'description' => $this->description,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-
-            'avatar' => new FileInfoResource($this->whenLoaded('avatar')),
-
         ];
     }
 }

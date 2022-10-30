@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('slug', 64)->nullable()->index();
             $table->json('data')->nullable();
 
-            $table->integer('updated_by')->unsigned()->nullable()->index();
-            $table->integer('created_by')->unsigned()->nullable()->index();
-            $table->integer('deleted_by')->unsigned()->nullable()->index();
+            $table->bigInteger('created_by')->unsigned()->nullable()->index();
+            $table->bigInteger('updated_by')->unsigned()->nullable()->index();
+            $table->bigInteger('deleted_by')->unsigned()->nullable()->index();
 
             $table->timestamps();
             $table->softDeletes();

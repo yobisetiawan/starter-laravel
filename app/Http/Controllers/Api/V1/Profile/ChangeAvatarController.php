@@ -26,7 +26,7 @@ class ChangeAvatarController extends BaseCrud
     {
         $user = Auth::user();
 
-        return $this->update($request, $user->id);
+        return $this->update($request, $user->uuid);
     }
 
     public function __afterUpdate()
