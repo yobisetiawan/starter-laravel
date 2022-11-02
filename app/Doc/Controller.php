@@ -132,6 +132,9 @@ namespace App\Doc;
  * @OA\Tag(
  *   name="Auth",
  * )
+ * @OA\Tag(
+ *   name="Example",
+ * )
  *
  *
  *

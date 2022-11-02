@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
+use App\Http\Controllers\Api\V1\Example\Sample2Controller;
 use App\Http\Controllers\Api\V1\Example\SampleController;
 use App\Http\Controllers\Api\V1\Profile\ChangeAvatarController;
 use App\Http\Controllers\Api\V1\Profile\ChangePasswordController;
@@ -50,6 +51,7 @@ Route::prefix('v1')->middleware(['guard_api'])->group(function () {
 
         Route::prefix('example')->group(function () {
             Route::apiResource('samples', SampleController::class);
+            Route::apiResource('samples2', Sample2Controller::class);
         });
     });
 });

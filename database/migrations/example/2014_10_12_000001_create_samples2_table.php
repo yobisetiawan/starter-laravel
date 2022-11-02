@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('samples', function (Blueprint $table) {
+        Schema::create('samples2', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
             $table->string('title')->nullable()->index();
             $table->text('description')->nullable();
+
+            $table->bigInteger('sample_id')->unsigned()->nullable()->index();
 
             $table->bigInteger('created_by')->unsigned()->nullable()->index();
             $table->bigInteger('updated_by')->unsigned()->nullable()->index();
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('samples');
+        Schema::dropIfExists('samples2');
     }
 };

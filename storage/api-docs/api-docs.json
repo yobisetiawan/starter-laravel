@@ -223,6 +223,366 @@
                 }
             }
         },
+        "/example/samples2": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_listType"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_listQ"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_listPage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_SortBy"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_OrderBy"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_limit"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Sample2 Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "title": {},
+                                    "description": {},
+                                    "sample_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return Sample2 Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/example/samples2/{id}": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Sample2 Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "title": {},
+                                    "description": {},
+                                    "sample_id": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return Sample2 Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/example/samples": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_listType"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_listQ"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_listPage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_SortBy"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_OrderBy"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_limit"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Sample Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "title": {},
+                                    "description": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return Sample Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/example/samples/{id}": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Sample Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OA_Relations"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "title": {},
+                                    "description": {}
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "return Sample Model",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/OA_id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "return Success true",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/user/change-avatar": {
             "post": {
                 "tags": [
@@ -521,6 +881,9 @@
     "tags": [
         {
             "name": "Auth"
+        },
+        {
+            "name": "Example"
         }
     ]
 }
