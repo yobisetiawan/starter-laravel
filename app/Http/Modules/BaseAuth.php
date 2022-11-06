@@ -118,11 +118,11 @@ class BaseAuth extends Controller
 
         $this->requestData = $req;
 
-        $query = User::query();
+        $this->query = User::query();
 
-        $this->__prepareQueryForgotPassword($query);
+        $this->__prepareQueryForgotPassword();
 
-        $row = $query->first();
+        $row = $this->query->first();
 
         if ($ress = $this->__beforeForgotPassword()) {
             return $ress;
@@ -148,11 +148,11 @@ class BaseAuth extends Controller
 
         $this->requestData = $req;
 
-        $query = User::query();
+        $this->query = User::query();
 
-        $this->__prepareQueryVerifyResetPassword($query);
+        $this->__prepareQueryVerifyResetPassword();
 
-        $row = $query->first();
+        $row = $this->query->first();
 
         if ($ress = $this->__beforeVerifyResetPassword()) {
             return $ress;
@@ -180,11 +180,11 @@ class BaseAuth extends Controller
 
             $this->requestData = $req;
 
-            $query = User::query();
+            $this->query = User::query();
 
-            $this->__prepareQueryResetPassword($query);
+            $this->__prepareQueryResetPassword();
 
-            $row = $query->first();
+            $row = $this->query->first();
 
             if ($row) {
 
@@ -222,11 +222,11 @@ class BaseAuth extends Controller
 
             $this->requestData = $req;
 
-            $query = User::query();
+            $this->query = User::query();
 
-            $this->__prepareQueryVerifyEmail($query);
+            $this->__prepareQueryVerifyEmail();
 
-            $row = $query->first();
+            $row = $this->query->first();
 
             if ($row) {
 

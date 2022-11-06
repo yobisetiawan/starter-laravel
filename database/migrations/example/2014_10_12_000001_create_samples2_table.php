@@ -20,6 +20,9 @@ return new class extends Migration
             $table->text('description')->nullable();
 
             $table->bigInteger('sample_id')->unsigned()->nullable()->index();
+            $table->date('date')->nullable();
+            $table->dateTime('date_time')->nullable();
+            $table->json('data')->nullable();
 
             $table->bigInteger('created_by')->unsigned()->nullable()->index();
             $table->bigInteger('updated_by')->unsigned()->nullable()->index();

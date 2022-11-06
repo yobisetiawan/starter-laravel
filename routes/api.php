@@ -1,7 +1,10 @@
 <?php
 
+
+use App\Http\Controllers\Api\V1\Auth\ForgotPasswordController;
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
+use App\Http\Controllers\Api\V1\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\V1\Example\Sample2Controller;
 use App\Http\Controllers\Api\V1\Example\SampleController;
 use App\Http\Controllers\Api\V1\Profile\ChangeAvatarController;
@@ -30,9 +33,9 @@ Route::prefix('v1')->middleware(['guard_api'])->group(function () {
     Route::prefix('auth')->middleware('throttle:15,1')->group(function () {
         Route::post('login', [LoginController::class, 'login']);
         Route::post('register', [RegisterController::class, 'register']);
-        Route::post('forgot-password', [AuthController::class, 'forgotPassword']);
-        Route::post('verify-password', [AuthController::class, 'verifyResetPassword']);
-        Route::post('reset-password', [AuthController::class, 'resetPassword']);
+        Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
+        Route::post('verify-password', [ResetPasswordController::class, 'verifyResetPassword']);
+        Route::post('reset-password', [ResetPasswordController::class, 'resetPassword']);
         Route::post('verify-email', [AuthController::class, 'verifyEmail']);
     });
 

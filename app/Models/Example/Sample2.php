@@ -15,6 +15,10 @@ class Sample2 extends Model
 
     protected $guarded = ['id', 'uuid'];
 
+    protected $cast = [
+        'data' => 'array',
+    ];
+
     public function sample()
     {
         return $this->belongsTo(Sample::class, 'sample_id');
